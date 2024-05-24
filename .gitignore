@@ -1,0 +1,12 @@
+*.iml
+.gradle/
+local.properties
+.DS_Store
+yuyansdk/
+build/
+captures/
+.externalNativeBuild
+.idea/
+gradlew
+gradlew.bat
+gradle/wrapper/

@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+static def dateTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
+}
+
+android {
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.yuyan.pinyin"
+        minSdk 23
+        targetSdk 34
+        versionCode 23
+        versionName "1.0.4"
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', "src/main/jniLibs"]
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("devdroid.jks")
+            storePassword "devdroid110"
+            keyAlias "devdroid"
+            keyPassword "devdroid110"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    //多渠道打包
+    flavorDimensions = ["default"]
+    productFlavors {
+        publishNonDefault true //唯一的不同
+        official { dimension "default" }
+    }
+    productFlavors.configureEach {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    buildTypes {
+        release {
+            // 混淆
+            minifyEnabled true
+            shrinkResources true
+            applicationIdSuffix  ".release"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard.cfg'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.release
+        }
+
+    }
+    //    第三方库使用java1.8
+    compileOptions {
+        sourceCompatibility 17
+        targetCompatibility 17
+    }
+    namespace 'com.yuyan'
+
+
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == "debug") {
+            variant.outputs.all {
+                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_debug.apk"
+            }
+
+        } else {
+            variant.outputs.all {
+                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_release.apk"
+            }
+        }
+    }
+}
+
+// 简单的函数用于获取当前的BuildType
+def getBuildType() {
+    return android.buildTypes.find { it.name == android.defaultConfig.buildTypes.getName() }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':yuyansdk')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+}
