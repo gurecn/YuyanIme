@@ -30,6 +30,18 @@
 7. 离线手写输入；
 8. 英文滑动输入；
 
+#### 键盘预览
+![九宫格拼音](./images/T9.webp)
+![乱序17拼音](./images/lx17.webp)
+![英文全键](./images/qwerty.webp)
+![数字键盘](./images/number.webp)
+![表情键盘](./images/emoji.webp)
+![数字行](./images/numberline.webp)
+![深色模式](./images/dark.webp)
+![设置键盘](./images/setting.webp)
+![单手键盘](./images/onehand.webp)
+
+
 #### 鸣谢：
 项目中借鉴部分第三方组件或服务：
 - [同文输入法](https://github.com/osfans)
