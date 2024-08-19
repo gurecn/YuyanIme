@@ -112,5 +112,10 @@ git submodule update --init --recursive
 给我发送邮箱：[gurecn@163.com](mailto:gurecn@163.com)
 
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gurecn/YuyanIme&type=Date)](https://star-history.com/#gurecn/YuyanIme&Date)
+
+
 
 
