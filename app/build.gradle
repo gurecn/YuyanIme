@@ -12,8 +12,8 @@ android {
         applicationId "com.yuyan.pinyin"
         minSdk 23
         targetSdk 34
-        versionCode 7
-        versionName "4.3.0"
+        versionCode 8
+        versionName "4.3.2"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
