@@ -9,3 +9,4 @@ captures/
 gradlew
 gradlew.bat
 gradle/wrapper/
+*.jks
