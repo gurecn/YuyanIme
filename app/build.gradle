@@ -17,10 +17,6 @@ android {
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
-        ndk {
-            abiFilters 'arm64-v8a', 'armeabi-v7a', "x86", "x86_64"
-        }
-
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -32,9 +28,12 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs', "src/main/jniLibs"]
+    splits {
+        abi {
+            enable true
+            reset()
+            include "arm64-v8a", "armeabi-v7a", "x86", "x86_64"
+            universalApk true
         }
     }
 
@@ -83,16 +82,15 @@ android {
     namespace 'com.yuyan'
 
 
-    android.applicationVariants.all { variant ->
-        if (variant.buildType.name == "debug") {
-            variant.outputs.all {
-                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_debug.apk"
+    android.applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach { output ->
+            def abiName = output.getFilter(com.android.build.OutputFile.ABI)
+            if(abiName != null){
+                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_${abiName}.apk"
+            } else {
+                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_full.apk"
             }
 
-        } else {
-            variant.outputs.all {
-                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_release.apk"
-            }
         }
     }
 }
