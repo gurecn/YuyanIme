@@ -2,18 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
-static def dateTime() {
-    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
-}
-
 android {
     compileSdk 34
     defaultConfig {
         applicationId "com.yuyan.pinyin"
         minSdk 23
         targetSdk 34
-        versionCode 9
-        versionName "4.3.3"
+        versionCode Integer.valueOf(versionCodeDate())
+        versionName versionNameDate()
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
@@ -86,18 +82,21 @@ android {
         variant.outputs.configureEach { output ->
             def abiName = output.getFilter(com.android.build.OutputFile.ABI)
             if(abiName != null){
-                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_${abiName}.apk"
+                outputFileName = "yuyanIme_${versionCodeDate()}_${abiName}.apk"
             } else {
-                outputFileName = "yuyanIme_v${variant.versionName}_${dateTime()}_full.apk"
+                outputFileName = "yuyanIme_${versionCodeDate()}_full.apk"
             }
 
         }
     }
 }
 
-// 简单的函数用于获取当前的BuildType
-def getBuildType() {
-    return android.buildTypes.find { it.name == android.defaultConfig.buildTypes.getName() }
+static def versionCodeDate() {
+    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+8"))
+}
+
+static def versionNameDate() {
+    return new Date().format("yyyyMMdd.HH", TimeZone.getTimeZone("GMT+8"))
 }
 
 dependencies {
