@@ -12,6 +12,9 @@ android {
         versionName versionNameDate()
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', "x86", "x86_64"
+        }
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -24,14 +27,6 @@ android {
         }
     }
 
-    splits {
-        abi {
-            enable true
-            reset()
-            include "arm64-v8a", "armeabi-v7a", "x86", "x86_64"
-            universalApk true
-        }
-    }
 
     signingConfigs {
         release {
@@ -78,15 +73,11 @@ android {
     namespace 'com.yuyan'
 
 
-    android.applicationVariants.configureEach { variant ->
-        variant.outputs.configureEach { output ->
-            def abiName = output.getFilter(com.android.build.OutputFile.ABI)
-            if(abiName != null){
-                outputFileName = "yuyanIme_${versionCodeDate()}_${abiName}.apk"
-            } else {
-                outputFileName = "yuyanIme_${versionCodeDate()}_full.apk"
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+            variant.outputs.all {
+                outputFileName = "yuyanIme_${versionCodeDate()}.apk"
             }
-
         }
     }
 }
