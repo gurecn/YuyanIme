@@ -43,7 +43,8 @@ android {
     flavorDimensions = ["default"]
     productFlavors {
         publishNonDefault true //唯一的不同
-        official { dimension "default" }
+        online {dimension "default"}
+        offline {dimension "default"}
     }
     productFlavors.configureEach {
         flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
@@ -74,10 +75,9 @@ android {
 
 
     android.applicationVariants.all { variant ->
-        if (variant.buildType.name == "release") {
-            variant.outputs.all {
-                outputFileName = "yuyanIme_${versionCodeDate()}.apk"
-            }
+        def flavor = variant.getProductFlavors()[0].name
+        variant.outputs.all {
+            outputFileName = "yuyanIme_${versionCodeDate()}_${flavor}.apk"   // offline      online
         }
     }
 }
