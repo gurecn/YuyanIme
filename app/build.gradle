@@ -3,11 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdk 34
+    compileSdk 35
     defaultConfig {
         applicationId "com.yuyan.pinyin"
         minSdk 23
-        targetSdk 34
+        targetSdk 35
         versionCode Integer.valueOf(versionCodeDate())
         versionName versionNameDate()
 
@@ -46,9 +46,6 @@ android {
         online {dimension "default"}
         offline {dimension "default"}
     }
-    productFlavors.configureEach {
-        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
-    }
 
     buildTypes {
         release {
@@ -73,10 +70,9 @@ android {
     }
     namespace 'com.yuyan'
 
-
-    android.applicationVariants.all { variant ->
+    android.applicationVariants.configureEach { variant ->
         def flavor = variant.getProductFlavors()[0].name
-        variant.outputs.all {
+        variant.outputs.configureEach {
             outputFileName = "yuyanIme_${versionCodeDate()}_${flavor}.apk"   // offline      online
         }
     }
