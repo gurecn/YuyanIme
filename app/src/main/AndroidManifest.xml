@@ -6,6 +6,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
+        android:extractNativeLibs="true"
         android:theme="@style/Theme.AppTheme">
         <service
             android:name="com.yuyan.imemodule.service.ImeService"
