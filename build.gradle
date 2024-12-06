@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         gradlePluginPortal()
+        maven { url 'https://maven.aliyun.com/repository/public' }
         google()
     }
     dependencies {
@@ -14,7 +15,7 @@ buildscript {
 allprojects {
     repositories {
         gradlePluginPortal()
-        maven{ url 'https://jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         mavenCentral()
         google()
     }
