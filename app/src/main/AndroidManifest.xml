@@ -10,7 +10,7 @@
         android:theme="@style/Theme.AppTheme">
         <service
             android:name="com.yuyan.imemodule.service.ImeService"
-            android:exported="false"
+            android:exported="true"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
