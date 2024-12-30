@@ -4,7 +4,7 @@
     android:label="@string/app_name"
     android:settingsActivity="com.yuyan.imemodule.ui.activity.SettingsActivity">
     <subtype
-             android:icon="@drawable/app_icon_circle"
+             android:icon="@drawable/app_icon"
              android:imeSubtypeMode="keyboard"
              android:imeSubtypeExtraValue="AsciiCapable,EmojiCapable"
              android:overridesImplicitlyEnabledSubtype="true"  />
