@@ -48,13 +48,10 @@
 * 在输入一半内容时切换横竖屏，较大概率导致横屏模式屏幕触摸无效，仅能点击键盘按键。
   临时方案：切换横竖屏前，确保输入框内容为空。
 
-## 运行环境：
-> gradle:8.2.0  
-> kotlin-gradle-plugin:1.9.22  
-> kotlin-serialization:1.9.22  
-> Android minSdk：23  
-> Android targetSdk：34  
-> JDK: penjdk version "17.0.11" 2024-04-16
+## 开发环境：
+> Android SDK: minSdk 23, [app/build.gradle](./app/build.gradle)  
+> 第三方库: [build.gradle](./build.gradle)  
+> JDK: OpenJDK version "17.0.11" 2024-04-16
 
 ## 构建项目：
 ### 1. 克隆此项目并拉取所有子模块。
@@ -66,28 +63,21 @@ git submodule update --init --recursive
 建议使用最新、稳定版本，本人使用`Android Studio Iguana | 2023.2.1 Patch 1`版本，按照常规项目导入即可，`Android Studio`会自动安装并配置 Android 开发环境。
 
 ## 键盘预览：
-* 九宫格拼音键盘
-  ![九宫格拼音](./images/T9.webp)
-* 乱序17拼音键盘
-  ![乱序17拼音](./images/lx17.webp)
-* 英文键盘
-  ![英文全键](./images/qwerty.webp)
-* 数字键盘
-  ![数字键盘](./images/number.webp)
-* 表情键盘
-  ![表情键盘](./images/emoji.webp)
-* 键盘数字行
-  ![数字行](./images/numberline.webp)
-* 主题深色模式
-  ![深色模式](./images/dark.webp)
-* 设置键盘
-  ![设置键盘](./images/setting.webp)
-* 键盘单手模式
-  ![单手键盘](./images/onehand.webp)
-* 悬浮键盘模式
-  ![悬浮键盘](./images/FloatKeyboard.webp)
-* 剪切板键盘模式
-  ![剪切板键盘](./images/ClipBoard.webp)
+| 九宫格拼音键盘 | 乱序17拼音键盘 | 英文键盘 |
+| - | - | - |
+| ![九宫格拼音](./images/T9.webp) | ![乱序17拼音](./images/lx17.webp) | ![英文全键](./images/qwerty.webp) |
+
+| 数字键盘 | 表情键盘 | 键盘数字行 |
+| - | - | - |
+| ![数字键盘](./images/number.webp) | ![表情键盘](./images/emoji.webp) | ![数字行](./images/numberline.webp) |
+
+| 主题深色模式 | 设置键盘 | 单手键盘模式 |
+| - | - | - |
+| ![深色模式](./images/dark.webp) | ![设置键盘](./images/setting.webp) | ![单手键盘](./images/onehand.webp) |
+
+| 悬浮键盘模式 | 剪切板键盘模式 |
+| - | - |
+| ![悬浮键盘](./images/FloatKeyboard.webp) | ![剪切板键盘](./images/ClipBoard.webp) |
 
 ## 鸣谢：
 项目中借鉴或使用部分第三方组件或服务：
