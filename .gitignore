@@ -6,8 +6,6 @@ build/
 captures/
 .externalNativeBuild
 .idea/
-gradlew
-gradlew.bat
 gradle/wrapper/
 *.jks
 /.kotlin
