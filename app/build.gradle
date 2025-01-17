@@ -44,8 +44,14 @@ android {
     flavorDimensions = ["default"]
     productFlavors {
         publishNonDefault true //唯一的不同
-        online {dimension "default"}
-        offline {dimension "default"}
+        online {
+            dimension "default"
+            applicationIdSuffix  ".online"
+        }
+        offline {
+            dimension "default"
+            applicationIdSuffix  ".offline"
+        }
     }
 
     buildTypes {
@@ -72,9 +78,8 @@ android {
     namespace 'com.yuyan'
 
     android.applicationVariants.configureEach { variant ->
-        def flavor = variant.getProductFlavors()[0].name
         variant.outputs.configureEach {
-            outputFileName = "yuyanIme_${versionCodeDate()}_${flavor}.apk"   // offline      online
+            outputFileName = "yuyanIme_${versionCodeDate()}_${variant.getProductFlavors()[0].name}_${variant.buildType.name}.apk"   // offline      online
         }
     }
 }
