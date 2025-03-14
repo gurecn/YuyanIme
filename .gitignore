@@ -11,3 +11,4 @@ gradlew.bat
 gradle/wrapper/
 *.jks
 /.kotlin
+*.log
