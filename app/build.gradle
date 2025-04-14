@@ -29,16 +29,16 @@ android {
     }
 
 
-    signingConfigs {
-        release {
-            storeFile file("devdroid.jks")
-            storePassword "devdroid110"
-            keyAlias "devdroid"
-            keyPassword "devdroid110"
-            v1SigningEnabled true
-            v2SigningEnabled true
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file("devdroid.jks")
+//            storePassword "devdroid110"
+//            keyAlias "devdroid"
+//            keyPassword "devdroid110"
+//            v1SigningEnabled true
+//            v2SigningEnabled true
+//        }
+//    }
 
     //多渠道打包
     flavorDimensions = ["default"]
@@ -61,12 +61,12 @@ android {
             shrinkResources true
             applicationIdSuffix  ".release"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard.cfg'
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
 
         debug {
             applicationIdSuffix ".debug"
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
 
     }
