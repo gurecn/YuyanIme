@@ -1,3 +1,4 @@
 [submodule "yuyansdk"]
 	path = yuyansdk
-	url = git@github.com:gurecn/yuyansdk.git
+	url = git@github.com:ifit/yuyansdk.git
+
