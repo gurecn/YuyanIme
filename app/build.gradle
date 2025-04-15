@@ -3,6 +3,16 @@ plugins {
     id 'kotlin-android'
 }
 
+def props = new Properties()
+def isCI = System.getenv("CI") ?: false
+def path = System.getProperty("user.home") + "/.gradle/yuyanime.properties"
+
+if(isCI) {
+    path = "../yuyanime.properties"
+}
+
+file(path).withInputStream { props.load(it) }
+
 android {
     compileSdk 35
     defaultConfig {
@@ -29,16 +39,16 @@ android {
     }
 
 
-//    signingConfigs {
-//        release {
-//            storeFile file("devdroid.jks")
-//            storePassword "devdroid110"
-//            keyAlias "devdroid"
-//            keyPassword "devdroid110"
-//            v1SigningEnabled true
-//            v2SigningEnabled true
-//        }
-//    }
+   signingConfigs {
+       release {
+           storeFile file(props.getProperty("yuyanime_app_keystore_file"))
+           storePassword props.getProperty("yuyanime_app_keystore_password")
+           keyAlias props.getProperty("yuyanime_app_keystore_key_alias")
+           keyPassword props.getProperty("yuyanime_app_keystore_key_password")
+           v1SigningEnabled true
+           v2SigningEnabled true
+       }
+   }
 
     //多渠道打包
     flavorDimensions = ["default"]
