@@ -33,14 +33,6 @@ body:
       required: true
 
   - type: textarea
-    id: log
-    attributes:
-      label: 日志 / Log
-      description: 附上日志以帮助定位问题。 / Attach log to help locate the bug.
-    validations:
-      required: false
-
-  - type: textarea
     id: screenshot
     attributes:
       label: 截图 / Screenshot
