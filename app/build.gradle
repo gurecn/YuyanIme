@@ -40,7 +40,7 @@ android {
 
 
    signingConfigs {
-       release {
+       system {
            storeFile file(props.getProperty("yuyanime_app_keystore_file"))
            storePassword props.getProperty("yuyanime_app_keystore_password")
            keyAlias props.getProperty("yuyanime_app_keystore_key_alias")
@@ -71,12 +71,12 @@ android {
             shrinkResources true
             applicationIdSuffix  ".release"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard.cfg'
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.system
         }
 
         debug {
             applicationIdSuffix ".debug"
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.system
         }
 
     }
