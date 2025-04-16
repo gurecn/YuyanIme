@@ -57,7 +57,7 @@
 > kotlin-serialization:2.0.0  
 > Android minSdk：23  
 > Android targetSdk：35  
-> JDK: penjdk version "17.0.11" 2024-04-16
+> JDK: openjdk version "17.0.11" 2024-04-16
 
 ## 构建项目：
 ### 1. 克隆此项目并拉取所有子模块。
