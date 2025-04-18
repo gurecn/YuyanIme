@@ -12,3 +12,4 @@ gradle/wrapper/
 *.jks
 /.kotlin
 *.log
+yuyanime_keystore
