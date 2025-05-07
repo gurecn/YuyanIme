@@ -1,0 +1,3 @@
+# copied from https://github.com/gradle/gradle/blob/eba295e67c9e940c21f8d8ffb099a8a4a95f8ecc/.gitattributes
+*.bat           text eol=crlf
+*.sh            text eol=lf
