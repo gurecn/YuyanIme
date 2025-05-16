@@ -66,31 +66,37 @@ git submodule update --init --recursive
 建议使用最新、稳定版本，本人使用`Android Studio Iguana | 2023.2.1 Patch 1`版本，按照常规项目导入即可，`Android Studio`会自动安装并配置 Android 开发环境。
 
 ## 键盘预览：
-| 九宫格拼音键盘 | 乱序17拼音键盘 | 英文键盘 |
+| 九宫格拼音键盘 | 全键拼音键盘 | 乱序17拼音                        |
 | - | - | - |
-| ![九宫格拼音](./images/T9.webp) | ![乱序17拼音](./images/lx17.webp) | ![英文全键](./images/qwerty.webp) |
+| ![九宫格拼音键盘](./images/t9_pinyin.jpg) | ![全键拼音键盘](./images/qwerty_pinyin.jpg) | ![乱序17拼音](./images/double_lx17.jpg) |
 
-| 数字键盘 | 表情键盘 | 键盘数字行 |
+| 双拼键盘 | 笔画键盘 | 手写键盘                         |
 | - | - | - |
-| ![数字键盘](./images/number.webp) | ![表情键盘](./images/emoji.webp) | ![数字行](./images/numberline.webp) |
+| ![双拼键盘](./images/double_pinyin.jpg) | ![笔画键盘](./images/stroke_pinyin.jpg) | ![手写键盘](./images/writing-pinyin.jpg) |
 
-| 主题深色模式 | 设置键盘 | 单手键盘模式 |
+| 英语键盘 | 数字键盘 | 编辑键盘 |
 | - | - | - |
-| ![深色模式](./images/dark.webp) | ![设置键盘](./images/setting.webp) | ![单手键盘](./images/onehand.webp) |
+| ![英语键盘](./images/qwerty.jpg) |  ![数字键盘](./images/number.jpg) | ![编辑键盘](./images/textedit.jpg) |
 
-| 悬浮键盘模式 | 剪切板键盘模式 |
-| - | - |
-| ![悬浮键盘](./images/FloatKeyboard.webp) | ![剪切板键盘](./images/ClipBoard.webp) |
+| 剪切板键盘 | 单手键盘 | 悬浮键盘 |
+| - | - | - |
+| ![剪切板](./images/clipboard.jpg) | ![单手键盘](./images/onehand.jpg) | ![悬浮键盘](./images/float.jpg) |
+
+| 表情键盘 | 微信特效 | 数字行 |
+| - | - | - |
+| ![表情键盘](./images/emoji.jpg) | ![微信特效](./images/emoji_wechat.jpg) | ![数字行](./images/number_line.jpg) |
+
+| 深色主题 | 设置菜单 |
+| - | - | - |
+| ![深色主题](./images/dark.jpg) | ![设置菜单](./images/setting.jpg) |
 
 ## 鸣谢：
 感谢以下优秀的开源社区贡献：
 - [RIME](http://rime.im)
 - [同文输入法](https://github.com/osfans)
 - [小企鹅输入法](https://github.com/fcitx5-android/fcitx5-android)
-- [🍀四叶草拼音输入方案](https://github.com/fkxxyz/rime-cloverpinyin)  
-- [雾凇拼音方案](https://github.com/iDvel/rime-ice)
-- [白霜词库](https://github.com/gaboolic/rime-frost)
-
+- [雾凇拼音](https://github.com/iDvel/rime-ice)
+- [白霜拼音](https://github.com/gaboolic/rime-frost)
 
 ## 联系作者：
 访问我的资源: <a href="https://github.com/gurecn">https://github.com/gurecn</a>  
