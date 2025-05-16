@@ -20,7 +20,7 @@
 **因此我想要定制出一款基于Rime引擎的安装即用，哪怕没时间研究也能好用的输入法；**
 ### 输入模式更完善。
 最早接触安卓平台的[同文输入法](https://github.com/osfans)，后面接触[小企鹅输入法](https://github.com/fcitx5-android/fcitx5-android)，均采用Rime方案进行定制，在输入层面已经满足大部分需求。但是小企鹅输入法九宫格键盘不支持，同文输入法候选词选择不便且无法选择拼音组合，使用起来确实需要勇气。  
-语燕输入法内置[白霜词库](https://github.com/gaboolic/rime-frost)，优化Rime九宫格输入方案，支持绝大部分输出场景，提升输入效率。  
+语燕输入法内置多套优秀词库，优化Rime九宫输入方案、乱序输入方案，支持绝大部分输出场景，提升输入效率。  
 **因此我想定制出一款支持对小白用户来说使用更普及的九宫格，同时结合全键、双拼、手写、语音等多种方案的输入法。**  
 ### 个性化定制更贴心。
 手机屏幕越来越大，但是在走路时，一手提东西，一手打字回复消息对我来说是个头疼地问题，选择候选词够不到、选择出错屡屡出现，因此我定制了单手模式、悬浮键盘。  
@@ -28,9 +28,9 @@
 夜间输入时，屏幕刺眼，因此我定制了深色主题自动切换功能。更多贴心定制项正在进行中。
 
 ## 实现功能：
-+ 拼音输入：全拼（九宫格、全键）、双拼(小鹤、智能ABC、自然码、紫光、微软、搜狗、乱序17)、手写、五笔画；支持简拼、全拼；
++ 方案内置：全拼（九宫格、全键）、双拼(小鹤、智能ABC、自然码、紫光、微软、搜狗、乱序17)、手写、五笔画；支持简拼、全拼；
 + 英文输入：智能全键英文输入；
-+ 方案内置：输入法内置[雾凇输入方案](https://github.com/iDvel/rime-ice)，结合[白霜词库](https://github.com/gaboolic/rime-frost)；
++ 词库拓展：支持雾凇词库、白霜词库等多种词库拓展，输入体验良好；
 + 符号输入：中文、英文、数学、颜文字、EMOJI表情输入、微信特效表情；
 + 数字输入：数字键盘输入、键盘数字行输入； 
 + 键盘自定义：自定义菜单栏、主题、深色模式、键盘调节、键盘数字行、键盘位置移动； 
@@ -51,13 +51,10 @@
 * 在输入一半内容时切换横竖屏，较大概率导致横屏模式屏幕触摸无效，仅能点击键盘按键。
   临时方案：切换横竖屏前，确保输入框内容为空。
 
-## 运行环境：
-> gradle:8.3.2  
-> kotlin-gradle-plugin:1.9.22  
-> kotlin-serialization:2.0.0  
-> Android minSdk：23  
-> Android targetSdk：35  
-> JDK: penjdk version "17.0.11" 2024-04-16
+## 开发环境：
+> Android SDK: minSdk 23, [app/build.gradle](./app/build.gradle)  
+> 第三方库: [build.gradle](./build.gradle)  
+> JDK: OpenJDK version "17.0.11" 2024-04-16
 
 ## 构建项目：
 ### 1. 克隆此项目并拉取所有子模块。
@@ -69,31 +66,24 @@ git submodule update --init --recursive
 建议使用最新、稳定版本，本人使用`Android Studio Iguana | 2023.2.1 Patch 1`版本，按照常规项目导入即可，`Android Studio`会自动安装并配置 Android 开发环境。
 
 ## 键盘预览：
-* 九宫格拼音键盘
-  ![九宫格拼音](./images/T9.webp)
-* 乱序17拼音键盘
-  ![乱序17拼音](./images/lx17.webp)
-* 英文键盘
-  ![英文全键](./images/qwerty.webp)
-* 数字键盘
-  ![数字键盘](./images/number.webp)
-* 表情键盘
-  ![表情键盘](./images/emoji.webp)
-* 键盘数字行
-  ![数字行](./images/numberline.webp)
-* 主题深色模式
-  ![深色模式](./images/dark.webp)
-* 设置键盘
-  ![设置键盘](./images/setting.webp)
-* 键盘单手模式
-  ![单手键盘](./images/onehand.webp)
-* 悬浮键盘模式
-  ![悬浮键盘](./images/FloatKeyboard.webp)
-* 剪切板键盘模式
-  ![剪切板键盘](./images/ClipBoard.webp)
+| 九宫格拼音键盘 | 乱序17拼音键盘 | 英文键盘 |
+| - | - | - |
+| ![九宫格拼音](./images/T9.webp) | ![乱序17拼音](./images/lx17.webp) | ![英文全键](./images/qwerty.webp) |
+
+| 数字键盘 | 表情键盘 | 键盘数字行 |
+| - | - | - |
+| ![数字键盘](./images/number.webp) | ![表情键盘](./images/emoji.webp) | ![数字行](./images/numberline.webp) |
+
+| 主题深色模式 | 设置键盘 | 单手键盘模式 |
+| - | - | - |
+| ![深色模式](./images/dark.webp) | ![设置键盘](./images/setting.webp) | ![单手键盘](./images/onehand.webp) |
+
+| 悬浮键盘模式 | 剪切板键盘模式 |
+| - | - |
+| ![悬浮键盘](./images/FloatKeyboard.webp) | ![剪切板键盘](./images/ClipBoard.webp) |
 
 ## 鸣谢：
-项目中借鉴或使用部分第三方组件或服务：
+感谢以下优秀的开源社区贡献：
 - [RIME](http://rime.im)
 - [同文输入法](https://github.com/osfans)
 - [小企鹅输入法](https://github.com/fcitx5-android/fcitx5-android)
@@ -104,11 +94,8 @@ git submodule update --init --recursive
 
 ## 联系作者：
 访问我的资源: <a href="https://github.com/gurecn">https://github.com/gurecn</a>  
-  
-访问我的博客：<a href="http://www.emzz.cn/">http://www.emzz.cn/</a>  
 
 给我发送邮箱：[gurecn@163.com](mailto:gurecn@163.com)
-
 
 ## Star History
 
