@@ -66,11 +66,11 @@ git submodule update --init --recursive
 建议使用最新、稳定版本，本人使用`Android Studio Iguana | 2023.2.1 Patch 1`版本，按照常规项目导入即可，`Android Studio`会自动安装并配置 Android 开发环境。
 
 ## 键盘预览：
-| 九宫格拼音键盘 | 全键拼音键盘 | 乱序17拼音                        |
+| 九宫键盘 | 全拼键盘 | 乱序17 |
 | - | - | - |
 | ![九宫格拼音键盘](./images/t9_pinyin.jpg) | ![全键拼音键盘](./images/qwerty_pinyin.jpg) | ![乱序17拼音](./images/double_lx17.jpg) |
 
-| 双拼键盘 | 笔画键盘 | 手写键盘                         |
+| 双拼键盘 | 笔画键盘 | 手写键盘 |
 | - | - | - |
 | ![双拼键盘](./images/double_pinyin.jpg) | ![笔画键盘](./images/stroke_pinyin.jpg) | ![手写键盘](./images/writing-pinyin.jpg) |
 
@@ -78,7 +78,7 @@ git submodule update --init --recursive
 | - | - | - |
 | ![英语键盘](./images/qwerty.jpg) |  ![数字键盘](./images/number.jpg) | ![编辑键盘](./images/textedit.jpg) |
 
-| 剪切板键盘 | 单手键盘 | 悬浮键盘 |
+| 剪切板 | 单手键盘 | 悬浮键盘 |
 | - | - | - |
 | ![剪切板](./images/clipboard.jpg) | ![单手键盘](./images/onehand.jpg) | ![悬浮键盘](./images/float.jpg) |
 
