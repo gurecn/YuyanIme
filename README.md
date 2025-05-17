@@ -72,7 +72,7 @@ git submodule update --init --recursive
 
 | 双拼键盘 | 笔画键盘 | 手写键盘 |
 | - | - | - |
-| ![双拼键盘](./images/double_pinyin.jpg) | ![笔画键盘](./images/stroke_pinyin.jpg) | ![手写键盘](./images/writing-pinyin.jpg) |
+| ![双拼键盘](./images/double_pinyin.jpg) | ![笔画键盘](./images/stroke_pinyin.jpg) | ![手写键盘](./images/writing_pinyin.jpg) |
 
 | 英语键盘 | 数字键盘 | 编辑键盘 |
 | - | - | - |
