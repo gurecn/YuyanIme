@@ -27,7 +27,12 @@ android {
             abortOnError false
         }
     }
-
+    
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
 
     signingConfigs {
         release {
