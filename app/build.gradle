@@ -48,7 +48,6 @@ android {
     //多渠道打包
     flavorDimensions = ["default"]
     productFlavors {
-        publishNonDefault true //唯一的不同
         online {
             dimension "default"
             applicationIdSuffix  ".online"
