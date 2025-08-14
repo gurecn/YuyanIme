@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.yuyan.pinyin"
+        minSdk 23
+        targetSdk 35
+        versionCode Integer.valueOf(versionCodeDate())
+        versionName versionNameDate()
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', "x86", "x86_64"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        lintOptions {
+            abortOnError false
+        }
+    }
+    
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("devdroid.jks")
+            storePassword "devdroid110"
+            keyAlias "devdroid"
+            keyPassword "devdroid110"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    //多渠道打包
+    flavorDimensions = ["default"]
+    productFlavors {
+        online {
+            dimension "default"
+            applicationIdSuffix  ".online"
+        }
+        offline {
+            dimension "default"
+            applicationIdSuffix  ".offline"
+        }
+    }
+
+    buildTypes {
+        release {
+            // 混淆
+            minifyEnabled true
+            shrinkResources true
+            applicationIdSuffix  ".release"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard.cfg'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.release
+        }
+
+    }
+    //    第三方库使用java1.8
+    compileOptions {
+        sourceCompatibility 17
+        targetCompatibility 17
+    }
+    namespace 'com.yuyan'
+
+    android.applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
+            outputFileName = "yuyanIme_${versionCodeDate()}_${variant.getProductFlavors()[0].name}_${variant.buildType.name}.apk"   // offline      online
+        }
+    }
+}
+
+static def versionCodeDate() {
+    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+8"))
+}
+
+static def versionNameDate() {
+    return new Date().format("yyyyMMdd.HH", TimeZone.getTimeZone("GMT+8"))
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':yuyansdk')
+}
