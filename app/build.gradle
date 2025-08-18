@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 35
+    compileSdk 36
+    namespace 'com.yuyan'
     defaultConfig {
         applicationId "com.yuyan.pinyin"
         minSdk 23
-        targetSdk 35
+        targetSdk 36
         versionCode Integer.valueOf(versionCodeDate())
         versionName versionNameDate()
 
@@ -36,12 +37,17 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("devdroid.jks")
-            storePassword "devdroid110"
-            keyAlias "devdroid"
-            keyPassword "devdroid110"
-            v1SigningEnabled true
-            v2SigningEnabled true
+            def keystoreFile = rootProject.file("keystore/keystore.properties")
+            if (keystoreFile.exists()) {
+                def keystoreProps = new Properties()
+                keystoreProps.load(new FileInputStream(keystoreFile))
+                storeFile file("${rootProject.projectDir}/keystore/" + keystoreProps["storeFile"])
+                storePassword keystoreProps["storePassword"]
+                keyAlias keystoreProps["keyAlias"]
+                keyPassword keystoreProps["keyPassword"]
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
         }
     }
 
@@ -79,8 +85,6 @@ android {
         sourceCompatibility 17
         targetCompatibility 17
     }
-    namespace 'com.yuyan'
-
     android.applicationVariants.configureEach { variant ->
         variant.outputs.configureEach {
             outputFileName = "yuyanIme_${versionCodeDate()}_${variant.getProductFlavors()[0].name}_${variant.buildType.name}.apk"   // offline      online
