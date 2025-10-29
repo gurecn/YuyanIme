@@ -2,9 +2,9 @@
 雨燕以其敏捷、优雅的飞行姿态，在雨天依然够飞翔、不畏艰险、勇往直前的飞翔态度，被赋予**灵巧、聪明、伶俐、积极、创新**的寓意。语言是人类交流的基本工具，是最重要的文化载体，输入方式是语言交流和信息传递的重要环节，使语言交流变得更加**高效、便捷**。  
 [语燕输入法](https://github.com/gurecn/YuyanIme)秉承这些特点，以“**易用、快速、准确**”为核心理念，追求极致、卓越、流畅的输入体验。 在设计上，语燕输入法借鉴主流的谷歌拼音、微信输入法等主流输入法精华，追求整体简洁大方，易于上手。支持多种输入方式，规划包括拼音、手写、语音等，满足不同用户的输入需求。支持丰富的个性化设置选项，用户可以根据自己的喜好进行自定义设置，让输入更加符合个人习惯。
 ## 安装使用：
-[华为应用市场已上架语燕输入法](https://appgallery.cloud.huawei.com/appDetail?pkgName=com.yuyan.pinyin.online.release)，华为应用商店中可直接安装。  
-后续会继续上架应用宝。也可以直接点击[Releases](https://github.com/gurecn/YuyanIme/releases)，下载最新版本安装包直接安装使用。 
-以上地址无法访问，可使用[Gitee](https://gitee.com/gurecn/YuyanIme/releases)或使用[微云云盘](https://share.weiyun.com/jRZtGrWV)下载。
+华为应用市场：[应用地址](https://appgallery.cloud.huawei.com/appDetail?pkgName=com.yuyan.pinyin.online.release)，应用宝：[应用地址](https://sj.qq.com/appdetail/com.yuyan.pinyin.online.release)，已上架语燕输入法，可直接搜索安装。
+也可以直接点击[Github Releases](https://github.com/gurecn/YuyanIme/releases)，下载最新版本安装包直接安装使用。 
+国内访问Github慢的话，可点击[Gitee Releases](https://gitee.com/gurecn/YuyanIme/releases)下载。
 使用过程中任何问题可以创建issues、应用内反馈或通过邮件等方式反馈，本人会根据需求及时修复。
 ## 设计原则：
 ### 纯输入功能，主打轻快。
