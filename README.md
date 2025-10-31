@@ -5,6 +5,11 @@
 华为应用市场：[应用地址](https://appgallery.cloud.huawei.com/appDetail?pkgName=com.yuyan.pinyin.online.release)，应用宝：[应用地址](https://sj.qq.com/appdetail/com.yuyan.pinyin.online.release)，已上架语燕输入法，可直接搜索安装。
 也可以直接点击[Github Releases](https://github.com/gurecn/YuyanIme/releases)，下载最新版本安装包直接安装使用。 
 国内访问Github慢的话，可点击[Gitee Releases](https://gitee.com/gurecn/YuyanIme/releases)下载。
+手机扫码下载地址：
+| Github                           | Gitee                          |
+|----------------------------------|--------------------------------|
+| ![github](./download/github.png) | ![gitee](./download/gitee.png) |
+
 使用过程中任何问题可以创建issues、应用内反馈或通过邮件等方式反馈，本人会根据需求及时修复。
 ## 设计原则：
 ### 纯输入功能，主打轻快。
