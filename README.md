@@ -102,9 +102,9 @@ keyPassword=testPassword
 | - | - | - |
 | ![表情键盘](./images/emoji.jpg) | ![微信特效](./images/emoji_wechat.jpg) | ![数字行](./images/number_line.jpg) |
 
-| 深色主题 | 设置菜单 |
-| - | - |
-| ![深色主题](./images/dark.jpg) | ![设置菜单](./images/setting.jpg) |
+| 深色主题 | 设置菜单 | 物理键盘 |
+| - | - | - |
+| ![深色主题](./images/dark.jpg) | ![设置菜单](./images/setting.jpg) | ![物理键盘](./images/hardware_keyboard.jpg) |
 
 ## 鸣谢：
 感谢以下优秀的开源社区贡献：
