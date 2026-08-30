@@ -88,6 +88,9 @@ android {
         sourceCompatibility 17
         targetCompatibility 17
     }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
     android.applicationVariants.configureEach { variant ->
         variant.outputs.configureEach {
             outputFileName = "yuyanIme_${versionCodeDate()}_${variant.buildType.name}.apk"
