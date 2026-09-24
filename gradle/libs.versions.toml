@@ -1,0 +1,53 @@
+[versions]
+# 构建工具链
+agp = "8.13.2"
+kotlin = "2.3.0"
+ksp = "2.3.6"
+# 库版本
+coroutines = "1.11.0"
+serializationJson = "1.10.0"
+room = "2.7.0"
+appcompat = "1.8.0"
+constraintlayout = "2.2.2"
+material = "1.14.0"
+flexbox = "3.0.0"
+emoji2 = "1.6.0"
+preference = "1.2.1"
+navigation = "2.9.8"
+splitties = "3.0.0"
+exifinterface = "1.4.2"
+compileSdk = "36"
+minSdk = "23"
+targetSdk = "36"
+[libraries]
+# AndroidX & Google
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+google-material = { module = "com.google.android.material:material", version.ref = "material" }
+google-flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+androidx-emoji2 = { module = "androidx.emoji2:emoji2", version.ref = "emoji2" }
+androidx-emoji2-views = { module = "androidx.emoji2:emoji2-views", version.ref = "emoji2" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preference" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-exifinterface = { module = "androidx.exifinterface:exifinterface", version.ref = "exifinterface" }
+# Kotlin
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
+# Splitties
+splitties-resources = { module = "com.louiscad.splitties:splitties-resources", version.ref = "splitties" }
+splitties-views-dsl-recyclerview = { module = "com.louiscad.splitties:splitties-views-dsl-recyclerview", version.ref = "splitties" }
+splitties-views-dsl-constraintlayout = { module = "com.louiscad.splitties:splitties-views-dsl-constraintlayout", version.ref = "splitties" }
+splitties-views-dsl-appcompat = { module = "com.louiscad.splitties:splitties-views-dsl-appcompat", version.ref = "splitties" }
+# Room
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" } # Parcelize 插件 ID
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

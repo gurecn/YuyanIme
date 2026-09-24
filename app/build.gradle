@@ -1,19 +1,27 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+static def versionCodeDate() {
+    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+8"))
+}
+
+static def versionNameDate() {
+    return new Date().format("yyyyMMdd.HH", TimeZone.getTimeZone("GMT+8"))
 }
 
 android {
-    compileSdk 36
-    namespace 'com.yuyan'
-    defaultConfig {
-        applicationId "com.yuyan.pinyin"
-        minSdk 23
-        targetSdk 36
-        versionCode Integer.valueOf(versionCodeDate())
-        versionName versionNameDate()
+    compileSdk = libs.versions.compileSdk.get().toInteger()
+    namespace = 'com.yuyan'
 
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    defaultConfig {
+        applicationId = "com.yuyan.pinyin"
+        minSdk = libs.versions.minSdk.get().toInteger()
+        targetSdk = libs.versions.targetSdk.get().toInteger()
+        versionCode = Integer.valueOf(versionCodeDate())
+        versionName = versionNameDate()
+        testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
         ndk {
             abiFilters 'arm64-v8a'
         }
@@ -28,10 +36,10 @@ android {
             abortOnError false
         }
     }
-    
-    packagingOptions {
+
+    packaging {
         jniLibs {
-            useLegacyPackaging true
+            useLegacyPackaging = true
         }
     }
 
@@ -48,59 +56,49 @@ android {
             def keyPasswordValue = System.getenv("RELEASE_KEY_PASSWORD") ?: keystoreProperties.getProperty('keyPassword')
             def keystoreFile = rootProject.file(keystoreFilePath)
             if (keystoreFile.exists() && keystorePassword && keyAliasName && keyPasswordValue) {
-                storeFile keystoreFile
-                storePassword keystorePassword
-                keyAlias keyAliasName
-                keyPassword keyPasswordValue
-                v1SigningEnabled true
-                v2SigningEnabled true
+                storeFile = keystoreFile
+                storePassword = keystorePassword
+                keyAlias = keyAliasName
+                keyPassword = keyPasswordValue
+                v1SigningEnabled = true
+                v2SigningEnabled = true
             }
         }
     }
 
-    //多渠道打包
     flavorDimensions = ["default"]
     productFlavors {
         offline {
-            dimension "default"
-            applicationIdSuffix  ".offline"
+            dimension = "default"
+            applicationIdSuffix = ".offline"
         }
     }
 
     buildTypes {
         release {
-            // 混淆
-            minifyEnabled true
-            shrinkResources true
-            applicationIdSuffix  ".release"
+            minifyEnabled = true
+            shrinkResources = true
+            applicationIdSuffix = ".release"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard.cfg'
-            signingConfig signingConfigs.release
+            signingConfig = signingConfigs.release
         }
-
         debug {
-            applicationIdSuffix ".debug"
-            signingConfig signingConfigs.release
+            applicationIdSuffix = ".debug"
+            signingConfig = signingConfigs.release
         }
-
     }
-    //    第三方库使用java1.8
+
     compileOptions {
-        sourceCompatibility 17
-        targetCompatibility 17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    android.applicationVariants.configureEach { variant ->
-        variant.outputs.configureEach {
-            outputFileName = "yuyanIme_${versionCodeDate()}_${variant.buildType.name}.apk"
+    androidComponents {
+        onVariants(selector().all()) { variant ->
+            variant.outputs.forEach { output ->
+                output.outputFileName.set("yuyanIme_${versionCodeDate()}_${variant.buildType}.apk")
+            }
         }
     }
-}
-
-static def versionCodeDate() {
-    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+8"))
-}
-
-static def versionNameDate() {
-    return new Date().format("yyyyMMdd.HH", TimeZone.getTimeZone("GMT+8"))
 }
 
 dependencies {

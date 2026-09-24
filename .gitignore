@@ -10,3 +10,4 @@ captures/
 keystore/keystore.properties
 /.kotlin
 *.log
+/gradle/gradle-daemon-jvm.properties
