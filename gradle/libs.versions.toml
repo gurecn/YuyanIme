@@ -8,6 +8,8 @@ coroutines = "1.11.0"
 serializationJson = "1.10.0"
 room = "2.7.0"
 appcompat = "1.8.0"
+# 与 splitties 3.0.0 对 recyclerview 的 strictly 约束保持一致，显式声明避免只能靠传递依赖引入
+recyclerview = "1.2.1"
 constraintlayout = "2.2.2"
 material = "1.14.0"
 flexbox = "3.0.0"
@@ -22,6 +24,7 @@ targetSdk = "36"
 [libraries]
 # AndroidX & Google
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 google-material = { module = "com.google.android.material:material", version.ref = "material" }
 google-flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
