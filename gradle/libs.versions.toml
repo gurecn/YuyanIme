@@ -18,6 +18,7 @@ preference = "1.2.1"
 navigation = "2.9.8"
 splitties = "3.0.0"
 exifinterface = "1.4.2"
+testRunner = "1.6.2"
 compileSdk = "36"
 minSdk = "23"
 targetSdk = "36"
@@ -47,6 +48,8 @@ splitties-views-dsl-appcompat = { module = "com.louiscad.splitties:splitties-vie
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+# Test
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "testRunner" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
