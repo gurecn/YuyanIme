@@ -1,3 +1,3 @@
 [submodule "yuyansdk"]
-	path = yuyansdk
+	path = imesdk
 	url = https://github.com/gurecn/yuyansdk.git
